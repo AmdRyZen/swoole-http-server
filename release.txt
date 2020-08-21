@@ -1,0 +1,18 @@
+发布流程
+
+0 git checkout master  
+  git pull
+
+1 copy  对应环境的  比如  .env.prod  修改文件名为  .env    当前没有  测试环境 和  运测环境
+
+2 composer install/update
+
+3 前台接口
+  sudo php mix-httpd start -c ../applications/http/config/httpd.php -d  守护进程启动
+  sudo php mix-httpd restart -c ../applications/http/config/httpd.php -d  守护进程重启
+  sudo php mix-httpd stop -c ../applications/http/config/httpd.php  停止服务   一般用不到
+
+4 后台接口
+ sudo php mix-httpd start -c ../applications/backend/config/httpd.php -d  守护进程启动
+ sudo php mix-httpd restart -c ../applications/backend/config/httpd.php -d  守护进程重启
+ sudo php mix-httpd stop -c ../applications/backend/config/httpd.php  停止服务   一般用不到
